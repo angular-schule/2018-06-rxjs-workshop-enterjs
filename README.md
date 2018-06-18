@@ -13,6 +13,44 @@ Hier wird während des Workshops stets der Quelltext mit unseren Beispielen verf
 Damit wir gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.  
 Die gesamte Installation wird nicht mehr als 30 Minuten dauern. 
 
+## Übungen starten
+
+Wir haben die Übungen in zwei Blöcke geteilt.
+Im ersten Teil nutzen wir RxJS direkt auf der Kommandozeile, später wechseln wir in den Browser.
+
+
+### Block 1: Node.js auf der Kommandozeile
+
+Bitte führe die folgenden Befehle aus:
+
+```bash
+cd node
+npm install
+ts-node test
+```
+
+Die Übungen liegen im Ordner `node/exercises`.
+Die einzelnen Übungen kannst Du mit folgendem Befehl ausführen, z.B.:
+
+```bash
+ts-node 0_callbacks.ts
+```
+
+
+### Block 2: Webanwendung im Browser
+
+Damit wir besser mit der Anwendung interagieren können, wechseln wir im zweiten Teil in den Browser.
+Wir nutzen zwar Angular als Framework, aber die Übungen sind allgemein gehalten und auch auf andere Umgebungen anwendbar.
+
+```bash
+cd browser
+npm install
+ng serve
+```
+
+Öffne den Browser unter der URL [http://localhost:4200](http://localhost:4200), um die Anwendung zu sehen.
+Die Übungen befinden sich im Ordner `browser/src/app/exercises/`.
+
 
 ## Benötigte Software
 
