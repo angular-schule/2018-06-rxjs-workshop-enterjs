@@ -24,11 +24,11 @@ Die gesamte Installation wird nicht mehr als 30 Minuten dauern.
 
 ## Proxy?
 
-__Vor der enterJS__
+__Vor der enterJS__  
 Sollte auf Deinem Firmenrechner der Internetzugang durch einen Proxy realisiert sein, müssen wir noch einige Einstellungen setzen.
 Wir haben dir hierfür folgende Anleitung erstellt: https://presentations.angular.schule/PROXY.html
 
-__Während der enterJS__
+__Während der enterJS__   
 Solltest du dann im WLAN der Veranstaltung sein UND eine VPN-Lösung verwenden, so behalte die Proxy-Einstellungen bei.
 Ansonsten entferne die Proxy-Einstellungen wieder.
 
