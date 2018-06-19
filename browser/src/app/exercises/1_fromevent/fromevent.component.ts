@@ -9,13 +9,19 @@ import { map, startWith, debounceTime } from 'rxjs/operators';
 })
 export class FromeventComponent implements OnInit {
 
-  currentWidth: number = 0;
+  currentWidth = 0;
 
   ngOnInit() {
 
     /******************************/
 
-    
+    fromEvent(window, 'resize').pipe(
+      map((e: any) => e.currentTarget.innerWidth),
+      startWith(window.innerWidth),
+      debounceTime(1000)
+    )
+    .subscribe(width => this.currentWidth = width);
+
 
     /******************************/
   }
