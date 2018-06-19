@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, merge, concat, race, forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'rxw-chat',
@@ -24,11 +24,12 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-    concat(this.msg.julia$.pipe(this.addName('Julia')),
+    forkJoin(this.msg.julia$.pipe(this.addName('Julia')),
           this.msg.georg$.pipe(this.addName('Georg')),
           this.msg.john$.pipe(this.addName('John'))
-    ).subscribe(
-      msg => this.logStream$.next(msg),
+    )
+    .subscribe(
+      msg => this.logStream$.next(msg.toString()),
       error => {},
       () => this.logStream$.next('All members have left!')
     );
