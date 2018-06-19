@@ -9,25 +9,25 @@ import { scan, reduce } from 'rxjs/operators';
 })
 export class GameScoreComponent implements OnInit {
 
-  currentScore: number = 0;
+  currentScore = 0;
   finalScore: number;
 
   score$ = new Subject<number>();
   logStream$ = new Subject();
-  
+
   constructor() { }
 
   ngOnInit() {
 
     /******************************/
-    
 
-    
+
+
     /******************************/
 
     this.score$.subscribe(
       value => this.logStream$.next(value),
-      err => {},
+      err => { },
       () => this.logStream$.next('COMPLETED')
     );
   }
