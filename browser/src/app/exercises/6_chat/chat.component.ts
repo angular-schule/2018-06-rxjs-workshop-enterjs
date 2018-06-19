@@ -13,16 +13,25 @@ export class ChatComponent implements OnInit {
     julia$: new Subject<string>(),
     georg$: new Subject<string>(),
     john$: new Subject<string>()
-  }
+  };
 
   logStream$ = new Subject<string>();
 
   constructor() { }
 
-  ngOnInit() {
-    /*******************************/
+  addName(name: string) {
+    return map(msg => name + ': ' + msg);
+  }
 
-    /*******************************/
+  ngOnInit() {
+    merge(this.msg.julia$.pipe(this.addName('Julia')),
+          this.msg.georg$.pipe(this.addName('Georg')),
+          this.msg.john$.pipe(this.addName('John'))
+    ).subscribe(
+      msg => this.logStream$.next(msg),
+      error => {},
+      () => this.logStream$.next('All members have left!')
+    );
   }
 
 }
