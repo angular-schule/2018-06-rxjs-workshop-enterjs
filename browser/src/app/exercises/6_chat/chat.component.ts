@@ -24,7 +24,7 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-    merge(this.msg.julia$.pipe(this.addName('Julia')),
+    concat(this.msg.julia$.pipe(this.addName('Julia')),
           this.msg.georg$.pipe(this.addName('Georg')),
           this.msg.john$.pipe(this.addName('John'))
     ).subscribe(
