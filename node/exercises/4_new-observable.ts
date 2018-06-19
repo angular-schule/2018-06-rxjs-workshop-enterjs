@@ -2,8 +2,16 @@ import { Observable } from 'rxjs';
 
 /*************************************/
 
-// TODO
-const myObservable$ = // ...
+const myObservable$ = new Observable(observer => {
+  setTimeout(() => {
+    observer.next('TIMEOUT');
+    observer.complete();
+  }, 2000);
+  observer.next('A');
+  observer.next('B');
+  observer.next('C');
+
+});
 
 /*************************************/
 
