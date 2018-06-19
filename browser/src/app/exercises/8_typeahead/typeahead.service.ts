@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TypeaheadService {
 
-  apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
+  // apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
+  apiUrl = 'https://www.googleapis.com/books/v1/volumes?key=AIzaSyB4zhEUhOLqpP1r6Bru4EXpe5TfUMjfT5o&q=';
 
   constructor(private http: HttpClient) { }
 
