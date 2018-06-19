@@ -15,13 +15,16 @@ export class UnsubscribeComponent implements OnInit, OnDestroy {
 
   /*******************************/
 
-  sub: Subscription;
+  // sub: Subscription;
+  alive = true;
 
   /*******************************/
   ngOnInit() {
     const interval$ = timer(0, 1000);
-    this.sub = interval$.pipe(
 
+    // this.sub =
+    interval$.pipe(
+      takeWhile(() => this.alive)
     ).subscribe(
       msg => this.log(msg),
       err => this.log('ERROR: ' + err),
@@ -32,7 +35,8 @@ export class UnsubscribeComponent implements OnInit, OnDestroy {
   destroy() {
     /*******************************/
 
-    this.sub.unsubscribe();
+    // this.sub.unsubscribe();
+    this.alive = false;
 
     /*******************************/
 
